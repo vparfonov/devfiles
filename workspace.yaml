@@ -5,7 +5,7 @@ components:
   - 
     alias: theia-editor
     reference: >-
-      https://url/meta.yaml
+      https://github.com/vzhukovskii/devfiles/raw/master/meta.yaml
     type: cheEditor
   - id: ms-kubernetes-tools/vscode-kubernetes-tools/latest
     type: chePlugin
