@@ -1,0 +1,30 @@
+apiVersion: v2
+publisher: eclipse
+name: che-theia
+version: next
+type: Che Editor
+displayName: theia-ide
+title: Eclipse Theia development version.
+description: Eclipse Theia, get the latest release each day.
+icon: https://raw.githubusercontent.com/theia-ide/theia/master/logo/theia-logo-no-text-black.svg?sanitize=true
+category: Editor
+repository: https://github.com/eclipse/che-theia
+firstPublicationDate: "2019-03-07"
+spec:
+  containers:
+   - name: theia-ide
+     image: "vzhukovs/che-theia:next"
+     mountSources: true
+     memoryLimit: "512M"
+  initContainers:
+  - name: remote-runtime-injector
+    image: "vzhukovs/che-theia-endpoint-runtime-binary:next"
+    volumes:
+      - mountPath: "/remote-endpoint"
+        name: remote-endpoint
+        ephemeral: true
+    env:
+      - name: PLUGIN_REMOTE_ENDPOINT_EXECUTABLE
+        value: /remote-endpoint/plugin-remote-endpoint
+      - name: REMOTE_ENDPOINT_VOLUME_NAME
+        value: remote-endpoint
