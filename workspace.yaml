@@ -7,3 +7,6 @@ components:
     reference: >-
       https://raw.githubusercontent.com/vparfonov/devfiles/master/meta.yaml
     type: cheEditor
+    env:
+      - value: '4167'
+        name: CHE_WORKSPACE_TELEMETRY_BACKEND_PORT
