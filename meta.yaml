@@ -28,6 +28,13 @@ spec:
         protocol: http
         type: ide-dev
         discoverable: false
+   -  name: "telemetry-plugin"
+      public: true
+      targetPort: 3101
+      attributes:
+        protocol: http
+        type: telemetry-plugin
+        discoverable: false
    -  name: "theia-redirect-1"
       public: true
       targetPort: 13131
