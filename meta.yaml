@@ -55,7 +55,7 @@ spec:
         discoverable: false
   containers:
    - name: theia-ide
-     image: "quay.io/eclipse/che-theia:next"
+     image: "vparfonov/che-theia:next"
      env:
          - name: THEIA_PLUGINS
            value: local-dir:///plugins
