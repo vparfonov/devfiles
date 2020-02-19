@@ -8,7 +8,7 @@ projects:
       location: 'https://github.com/eclipse/che.git'
 components:
   - type: dockerimage
-    image: 'quay.io/eclipse/che-dev:nightly'
+    image: 'vparfonov/che-dev:yarnUp'
     alias: che-server-dev
     mountSources: true
     memoryLimit: 3Gi
