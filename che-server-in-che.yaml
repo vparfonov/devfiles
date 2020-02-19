@@ -11,7 +11,7 @@ components:
     image: 'quay.io/eclipse/che-dev:nightly'
     alias: che-server-dev
     mountSources: true
-    memoryLimit: 5Gi
+    memoryLimit: 4Gi
     volumes:
       - name: maven
         containerPath: /home/user/.m2
