@@ -85,6 +85,9 @@ spec:
          - exposedPort: 13132
          - exposedPort: 13133
      memoryLimit: "512M"
+   - name: che-rsync
+     image: "vparfono/che-rsync:latest"  
+     mountSources: true
   initContainers:
   - name: remote-runtime-injector
     image: "eclipse/che-theia-endpoint-runtime-binary:next"
