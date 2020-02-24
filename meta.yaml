@@ -86,7 +86,7 @@ spec:
          - exposedPort: 13133
      memoryLimit: "512M"
    - name: che-rsync
-     image: "vparfono/che-rsync:latest"  
+     image: "vparfonov/che-rsync:latest"  
      mountSources: true
   initContainers:
   - name: remote-runtime-injector
