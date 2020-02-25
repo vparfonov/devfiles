@@ -63,6 +63,12 @@ spec:
       attributes:
         protocol: http
         discoverable: false
+   -  name: "che-rsync-3"
+      public: true
+      targetPort: 22
+      attributes:
+        protocol: http
+        discoverable: false
   containers:
    - name: theia-ide
      image: "vparfonov/che-theia:next"
