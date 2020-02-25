@@ -88,6 +88,8 @@ spec:
    - name: che-rsync
      image: "vparfonov/che-rsync:latest"  
      mountSources: true
+     ports:
+         - exposedPort: 22
   initContainers:
   - name: remote-runtime-injector
     image: "eclipse/che-theia-endpoint-runtime-binary:next"
