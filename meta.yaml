@@ -63,7 +63,7 @@ spec:
       attributes:
         protocol: http
         discoverable: false
-   -  name: "che-rsync-3"
+   -  name: "che-rsync"
       public: true
       targetPort: 22
       attributes:
