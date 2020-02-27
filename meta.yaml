@@ -67,6 +67,7 @@ spec:
       public: true
       targetPort: 2222
       attributes:
+        secure: true
         protocol: TCP
         discoverable: false
   containers:
