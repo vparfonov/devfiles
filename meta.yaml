@@ -67,7 +67,7 @@ spec:
       public: true
       targetPort: 2222
       attributes:
-        protocol: tcp
+        protocol: tlc
         discoverable: false
   containers:
    - name: theia-ide
