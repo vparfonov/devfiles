@@ -65,7 +65,7 @@ spec:
         discoverable: false
    -  name: "che-rsync"
       public: true
-      targetPort: 22
+      targetPort: 2222
       attributes:
         protocol: http
         discoverable: false
@@ -95,7 +95,7 @@ spec:
      image: "vparfonov/che-rsync:latest"  
      mountSources: true
      ports:
-         - exposedPort: 22
+         - exposedPort: 2222
   initContainers:
   - name: remote-runtime-injector
     image: "eclipse/che-theia-endpoint-runtime-binary:next"
