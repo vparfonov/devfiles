@@ -64,7 +64,7 @@ spec:
         protocol: http
         discoverable: false
    -  name: "che-rsync"
-      public: true
+      public: false
       targetPort: 2222
       attributes:
         protocol: TCP
