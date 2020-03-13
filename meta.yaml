@@ -92,7 +92,11 @@ spec:
          - exposedPort: 13133
      memoryLimit: "512M"
    - name: che-rsync
-     image: "vparfonov/che-rsync:latest"  
+     image: "vparfonov/che-rsync:latest"
+     lifecycle:
+        preStop:
+          exec:
+            command: command: ["/bin/sh","-c","rsync --recursive --quiet --rsh=\"ssh  -i /.ssh/rsync -l user -p 2220 -o PasswordAuthentication=no  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null\"   /projects/    server-che-rsync:/projects/"] 
      mountSources: true
      ports:
          - exposedPort: 2222
