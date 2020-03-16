@@ -1,15 +1,24 @@
 apiVersion: v2
-kind: Pod
-metadata:
-  name: lifecycle-demo
+publisher: eclipse
+name: che-theia
+version: next
+type: Che Editor
+displayName: theia-ide
+title: Eclipse Theia development version.
+description: Eclipse Theia, get the latest release each day.
+icon: https://raw.githubusercontent.com/theia-ide/theia/master/logo/theia-logo-no-text-black.svg?sanitize=true
+category: Editor
+repository: https://github.com/eclipse/che-theia
+firstPublicationDate: "2019-03-07"
 spec:
   containers:
-  - name: lifecycle-demo-container
-    image: nginx
-    lifecycle:
+   - name: che-rsync
+     image: "vparfonov/che-rsync:latest"
+     lifecycle:
       postStart:
         exec:
           command: ["/bin/sh", "-c", "echo Hello from the postStart handler > /usr/share/message"]
       preStop:
         exec:
-          command: ["/bin/sh","-c","nginx -s quit; while killall -0 nginx; do sleep 1; done"]
+          command: ["/bin/sh","-c","ng
+     mountSources: true
