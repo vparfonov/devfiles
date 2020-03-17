@@ -96,7 +96,7 @@ spec:
      lifecycle:
         preStop:
           exec:
-            command:["/bin/sh","-c","rsync --recursive --quiet --rsh=\"ssh  -i /.ssh/rsync -l user -p 2220 -o PasswordAuthentication=no  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null\"   /projects/    server-che-rsync:/projects/"] 
+            command:["/bin/sh","-c","rsync --recursive --quiet --rsh='ssh  -i /.ssh/rsync -l user -p 2220 -o PasswordAuthentication=no  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'   /projects/    server-che-rsync:/projects/"] 
      mountSources: true
      ports:
          - exposedPort: 2222
