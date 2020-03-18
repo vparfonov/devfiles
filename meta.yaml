@@ -94,12 +94,12 @@ spec:
    - name: che-rsync
      image: "vparfonov/che-rsync:latest"
      lifecycle:
-        postStart:
-          exec:
-            command: ["/bin/sh","-c","rsync --recursive --quiet --rsh='ssh  -i /.ssh/rsync -l user -p 2222 -o PasswordAuthentication=no  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null' che-rsync:/projects/  /projects/"]
-        preStop:
-          exec:
-            command: ["/bin/sh","-c","rsync --recursive --quiet --rsh='ssh  -i /.ssh/rsync -l user -p 2222 -o PasswordAuthentication=no  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'   /projects/    che-rsync:/projects/"] 
+      postStart:
+        exec:
+          command: ["/bin/sh", "-c", "/bin/restore.sh"]
+      preStop:
+        exec:
+          command: ["/bin/sh","-c","/bin/backup.sh"] 
      mountSources: true
      ports:
          - exposedPort: 2222
