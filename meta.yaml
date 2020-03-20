@@ -103,6 +103,7 @@ spec:
      mountSources: true
      ports:
          - exposedPort: 2222
+     memoryLimit: "1Gi"    
   initContainers:
   - name: remote-runtime-injector
     image: "eclipse/che-theia-endpoint-runtime-binary:next"
