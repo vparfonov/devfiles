@@ -96,7 +96,7 @@ spec:
      lifecycle:
       postStart:
         exec:
-          command: ["/bin/sh", "-c", "/bin/restore.sh"]
+          command: ["/bin/sh", "-c", "time -o /projects/time /bin/restore.sh"]
       preStop:
         exec:
           command: ["/bin/sh","-c","/bin/backup.sh"] 
