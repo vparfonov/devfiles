@@ -21,6 +21,13 @@ spec:
         secure: true
         cookiesAuthEnabled: true
         discoverable: false
+   -  name: "theia-dev"
+      public: true
+      targetPort: 3130
+      attributes:
+        protocol: http
+        type: ide-dev
+        discoverable: false
    -  name: "webviews"
       public: true
       targetPort: 3100
@@ -31,6 +38,24 @@ spec:
         cookiesAuthEnabled: true
         discoverable: false
         unique: true     
+   -  name: "theia-redirect-1"
+      public: true
+      targetPort: 13131
+      attributes:
+        protocol: http
+        discoverable: false
+   -  name: "theia-redirect-2"
+      public: true
+      targetPort: 13132
+      attributes:
+        protocol: http
+        discoverable: false
+   -  name: "theia-redirect-3"
+      public: true
+      targetPort: 13133
+      attributes:
+        protocol: http
+        discoverable: false
    -  name: "che-rsync"
       public: false
       targetPort: 2222
@@ -40,6 +65,23 @@ spec:
   containers:
    - name: theia-ide
      image: "quay.io/eclipse/che-theia:next"
+     env:
+         - name: THEIA_PLUGINS
+           value: local-dir:///plugins
+         - name: HOSTED_PLUGIN_HOSTNAME
+           value: 0.0.0.0
+         - name: HOSTED_PLUGIN_PORT
+           value: "3130"
+     volumes:
+         - mountPath: "/plugins"
+           name: plugins
+     mountSources: true
+     ports:
+         - exposedPort: 3100
+         - exposedPort: 3130
+         - exposedPort: 13131
+         - exposedPort: 13132
+         - exposedPort: 13133
      memoryLimit: "512M"
    - name: che-rsync
      image: "vparfonov/che-rsync:latest"
@@ -53,7 +95,6 @@ spec:
      mountSources: true
      ports:
          - exposedPort: 2222
-     memoryLimit: "1Gi"    
   initContainers:
   - name: remote-runtime-injector
     image: "eclipse/che-theia-endpoint-runtime-binary:next"
