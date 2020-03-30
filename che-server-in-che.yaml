@@ -6,17 +6,9 @@ components:
     reference: >-
       https://raw.githubusercontent.com/vparfonov/devfiles/master/meta.yaml
     type: cheEditor
-    env:
-      - value: '4167'
-        name: CHE_WORKSPACE_TELEMETRY_BACKEND_PORT
   - type: dockerimage
     image: 'vparfonov/che-dev:yarnUp'
     alias: che-server-dev
     mountSources: true
     memoryLimit: 3Gi
-    volumes:
-      - name: maven
-        containerPath: /home/user/.m2
-      - name: npm-cache
-        containerPath: /home/user/.cache  
   
