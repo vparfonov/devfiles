@@ -4,7 +4,7 @@ metadata:
 components:
   - alias: theia-editor
     reference: >-
-      https://raw.githubusercontent.com/vparfonov/devfiles/master/meta2.yaml
+      https://raw.githubusercontent.com/vparfonov/devfiles/master/meta.yaml
     type: cheEditor
   - type: dockerimage
     image: 'vparfonov/che-dev:yarnUp'
