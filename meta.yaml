@@ -84,7 +84,7 @@ spec:
          - exposedPort: 13133
      memoryLimit: "512M"
    - name: che-rsync
-     image: "vparfonov/che-rsync:latest"
+     image: "vparfonov/workspace-data-sync:latest"
      lifecycle:
       postStart:
         exec:
