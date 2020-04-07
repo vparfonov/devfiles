@@ -93,8 +93,9 @@ spec:
         exec:
           command: ["/bin/sh","-c","/bin/backup.sh"] 
      mountSources: true
-     ports:
-         - exposedPort: 2222
+     env:
+         - name: RSYNC_PORT
+           value: 2222
   initContainers:
   - name: remote-runtime-injector
     image: "eclipse/che-theia-endpoint-runtime-binary:next"
