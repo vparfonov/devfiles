@@ -88,10 +88,10 @@ spec:
      lifecycle:
       postStart:
         exec:
-          command: ["/bin/sh", "-c", "/workspace-syncker/scripts/restore.sh"]
+          command: ["/bin/sh", "-c", "/scripts/restore.sh"]
       preStop:
         exec:
-          command: ["/bin/sh","-c","/workspace-syncker/scripts/backup.sh"] 
+          command: ["/bin/sh","-c","/scripts/backup.sh"] 
      mountSources: true
      env:
          - name: RSYNC_PORT
